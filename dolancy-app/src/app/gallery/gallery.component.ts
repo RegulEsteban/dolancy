@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Shoes } from '../shoes';
+import { ShoesService } from '../shoes.service';
 
 @Component({
   selector: 'app-gallery',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  shoes: Shoes[];
+    
+  constructor(private shoesService: ShoesService) { 
   }
 
+  ngOnInit() {
+    this.getShoes();
+  }
+  
+  getShoes(): void{
+    this.shoesService.getShoes().subscribe(shoes => this.shoes = shoes);
+  }
 }
