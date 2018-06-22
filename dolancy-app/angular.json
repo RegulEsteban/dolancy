@@ -23,9 +23,7 @@
               "src/assets"
             ],
             "styles": [
-               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                "src/custom_style/product.css",
-                "src/custom_style/carousel.css"
+               "node_modules/bootstrap/dist/css/bootstrap.min.css"
                ],
             "scripts": [
                "node_modules/jquery/dist/jquery.min.js",
