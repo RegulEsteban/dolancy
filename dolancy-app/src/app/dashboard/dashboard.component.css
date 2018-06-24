@@ -19,6 +19,7 @@
 .carousel-caption-dashboard h1{
     font-size: 7em;
     /*letter-spacing: 10px;*/
+    font-weight: bold;
 }
 
 .carousel-caption-dashboard p{

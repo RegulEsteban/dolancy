@@ -9,8 +9,10 @@ import { ShoesService } from '../shoes.service';
 })
 export class GalleryComponent implements OnInit {
   shoes: Shoes[];
-    
-  constructor(private shoesService: ShoesService) { 
+  bgGallery: string;
+  
+  constructor(private shoesService: ShoesService) {
+    this.bgGallery = '/assets/images/carousel1.jpg';
   }
 
   ngOnInit() {
