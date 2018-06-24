@@ -6,7 +6,7 @@ export const SHOES: Shoes[] = [
     color: 'Mr. Nice',
     modelo: '221 Miel',
     album: '/assets/images/catalogo/221-miel/',
-    detail: ['1.jpg', '2.jpg', '3.jpg'],
+    detail: ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
     description: 'Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo. xxx',
     price: 455.00,
     properties: {
@@ -20,7 +20,7 @@ export const SHOES: Shoes[] = [
     color: 'Narco',
     modelo: '097 Negro',
     album: '/assets/images/catalogo/097-negro/',
-    detail: ['1.jpg', '2.jpg', '3.jpg'],
+    detail: ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
     description: 'Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.',
     price: 455.00,
     properties: {
@@ -28,12 +28,13 @@ export const SHOES: Shoes[] = [
         forro: 'Flor de cerdo',
         suela: '100% cuero',
         tallas: '25 al 29'
-    },{ 
+    }
+  },{ 
     id: 3, 
     color: 'Narco',
     modelo: '097 Negro',
-    album: '/assets/images/catalogo/097-negro/',
-    detail: ['1.jpg', '2.jpg', '3.jpg'],
+    album: '/assets/images/catalogo/040-negro/',
+    detail: ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
     description: 'Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.',
     price: 455.00,
     properties: {

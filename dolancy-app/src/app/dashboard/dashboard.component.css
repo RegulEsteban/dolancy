@@ -2,6 +2,29 @@
   max-width: 960px;
 }
 
+.card{
+    border: none;
+}
+
+.carousel-caption-dashboard {
+  position: absolute;
+  right: 15%;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.carousel-caption-dashboard h1{
+    font-size: 7em;
+    /*letter-spacing: 10px;*/
+}
+
+.carousel-caption-dashboard p{
+    font-size: 1.5em;
+}
+
 /*
  * Custom translucent site header
  */
