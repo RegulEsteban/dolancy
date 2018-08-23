@@ -12,11 +12,12 @@ export class GalleryComponent implements OnInit {
   bgGallery: string;
   
   constructor(private shoesService: ShoesService) {
-    this.bgGallery = '/assets/images/carousel1.jpg';
+    this.bgGallery = '/assets/images/carousel2.jpg';
   }
 
   ngOnInit() {
     this.getShoes();
+    window.scrollTo(0, 0);
   }
   
   getShoes(): void{

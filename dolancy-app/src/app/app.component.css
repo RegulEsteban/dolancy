@@ -1,3 +1,25 @@
+main{
+    min-height: 600px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url("/assets/images/Logo.svg");
+    background-size: 300px 190px;
+}
+
 .navbar-brand img{
     margin-right: 5px;
+}
+
+.paral-loader {
+    min-height: 600px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: initial;
+}
+
+.loader-img{
+    background-image: url("/assets/images/Logo.svg");
+    background-size: 300px 180px;
 }
