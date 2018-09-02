@@ -3,13 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { AboutComponent } from './about/about.component';
 import { ShoeDetailComponent } from './shoe-detail/shoe-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/tienda', pathMatch: 'full' },
-  { path: 'tienda', component: DashboardComponent },
-  { path: 'galeria', component: GalleryComponent },
-  { path: 'producto/:id', component: ShoeDetailComponent }
+  { path: 'tienda', component: DashboardComponent, data: { animation: 'tienda' } },
+  { path: 'galeria', component: GalleryComponent, data: { animation: 'galeria' } },
+  { path: 'producto/:id', component: ShoeDetailComponent, data: { animation: 'producto' } },
+  { path: 'nosotros', component: AboutComponent, data: { animation: 'nosotros' } },
 ];
 
 @NgModule({

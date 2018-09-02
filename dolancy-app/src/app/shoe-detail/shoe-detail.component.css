@@ -1,5 +1,9 @@
 .jumbotron-custom{
     background-color: #fff;
+    border-radius: initial;
+    padding-top: initial;
+    margin-bottom: initial;
+    padding-bottom: initial;
 }
 .fa-dark{
     color: dimgrey;
