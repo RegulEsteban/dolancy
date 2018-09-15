@@ -26,14 +26,23 @@
 }
 
 .paralsec1 {
-    background-image: url("https://img.webnots.com/2017/05/parallax1.jpg");
+    background-image: url("/assets/images/catalogo/221-miel/horizontal.jpg");
 }
  
 .paralsec2 {
-    background-image: url("https://img.webnots.com/2015/11/parallax2.jpg");
+    background-image: url("/assets/images/catalogo/210-negro/horizontal.jpg");
 }
  
 .jumbotron{
     margin-bottom: 0;
     border-radius: initial;
+}
+
+.paralsec1:after {
+    content: "";
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    z-index: 1000000000;
+    width: 100%;
+    height: auto;
 }

@@ -8,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class AboutComponent implements OnInit {
   bgGallery: string;
   dolancyLogo: string;
+  pathImages: string;
   
   constructor() {
     this.bgGallery = '/assets/images/portada.jpg';
     this.dolancyLogo = '/assets/images/dolancy.png';
+    this.pathImages = '/assets/images';
   }
 
   ngOnInit() {

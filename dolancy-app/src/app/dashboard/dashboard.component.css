@@ -159,3 +159,20 @@ body {
     margin-top: 7rem;
   }
 }
+
+@media (max-width: 576px) {
+    .carousel-caption-dashboard h1{
+        font-size: 5em;
+    }
+    .carousel-caption h2{
+        font-size: 3em;
+    }
+    .card-img-overlay{
+        padding: 0.5rem;
+    }
+    .card-img-overlay h2{
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+}
