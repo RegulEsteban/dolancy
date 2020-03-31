@@ -1,138 +1,140 @@
+<nav class="navbar navbar-expand-lg bg-dark pt-5" style="z-index: auto"></nav>
+
 <div *ngIf="shoe" class="jumbotron jumbotron-custom">
   <div class="container-fluid">
     <div class="row">
-          <div class="col-md-5 order-md-2 pt-5">
-            <h2 class="featurette-heading"><span class="text-muted">Modelo:</span> {{ shoe.modelo | uppercase }}</h2>
-            <hr>
-            <h4>{{shoe.price | currency}} *</h4>
-            <p class="lead text-justify detail-description text-custom-desc">{{shoe.description}}</p>
-            <table class="table">
-              <tbody>
-                <tr class="text-center">
-                  <td>
-                      <img src="/assets/images/iconos/piel.png" width="30" height="30" class="d-inline-block align-top" alt="piel"><br>
-                      {{shoe.properties.piel}}
-                  </td>
-                  <td>
-                      <img src="/assets/images/iconos/corte.png" width="30" height="30" class="d-inline-block align-top" alt="corte"><br>
-                      {{shoe.properties.forro}}
-                  </td>
-                  <td>
-                      <img src="/assets/images/iconos/suela.png" width="30" height="30" class="d-inline-block align-top" alt="suela"><br>
-                      {{shoe.properties.suela}}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-              <h4>Tallas <small class="text-muted text-right">MX</small></h4>
-            <table class="table table-bordered">
-              <tbody>
-                <tr>
-                  <td>23</td>
-                  <td>24</td>
-                  <td>25</td>
-                  <td>26</td>
-                  <td>27</td>
-                  <td>28</td>
-                  <td>29</td>
-                </tr>
-              </tbody>
-            </table>
-              <hr>
-              <div class="container text-right">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                  <a href="https://www.facebook.com/dolancy/" target="_blank" class="btn btn-light"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                  <a href="https://www.instagram.com/dolancy/" target="_blank" class="btn btn-light"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </div>
-              </div>
-              
+      <div class="col-md-5 order-md-2 pt-5">
+        <h2 class="featurette-heading"><span class="text-muted">Modelo:</span> {{ shoe.modelo | uppercase }}</h2>
+        <hr>
+        <h4>{{shoe.price | currency}} *</h4>
+        <p class="lead text-justify detail-description text-custom-desc">{{shoe.description}}</p>
+        <table class="table">
+          <tbody>
+          <tr class="text-center">
+            <td>
+              <img src="{{globals.bucket}}/assets/images/iconos/piel.png" width="30" height="30" class="d-inline-block align-top" alt="piel"><br>
+              {{shoe.properties.piel}}
+            </td>
+            <td>
+              <img src="{{globals.bucket}}/assets/images/iconos/corte.png" width="30" height="30" class="d-inline-block align-top" alt="corte"><br>
+              {{shoe.properties.forro}}
+            </td>
+            <td>
+              <img src="{{globals.bucket}}/assets/images/iconos/suela.png" width="30" height="30" class="d-inline-block align-top" alt="suela"><br>
+              {{shoe.properties.suela}}
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Tallas <small class="text-muted text-right">MX</small></h4>
+        <button type="button" class="btn btn-lg btn-outline-dark mx-1 my-1" *ngFor="let talla of shoe.properties.tallas">{{talla}}</button>
+        <div *ngIf="shoe.online" class="mt-md-4">
+          <a [href]="shoe.online" class="btn btn-dark btn-lg btn-block mx-1 my-1">Comprar</a>
+        </div>
+        <hr>
+        <div class="container text-right">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="https://www.facebook.com/dolancy/" target="_blank" class="btn btn-light"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/dolancy/" target="_blank" class="btn btn-light"><i class="fa fa-instagram" aria-hidden="true"></i></a>
           </div>
-          <div class="col-md-7 order-md-1">
-            <div id="carouselShoes" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                  <div *ngFor="let view of shoe.detail; let idx = index" class="{{idx == 0 ? 'carousel-item active' : 'carousel-item'}}">
-                    <img class="d-block w-100" src="{{shoe.album}}/{{view}}" alt="{{shoe.modelo}}">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselShoes" role="button" data-slide="prev">
-                <i class="fa fa-chevron-left fa-2x fa-dark" aria-hidden="true"></i>
-                <span class="sr-only">Anterior</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselShoes" role="button" data-slide="next">
-                <i class="fa fa-chevron-right fa-2x fa-dark" aria-hidden="true"></i>
-                <span class="sr-only">Siguiente</span>
-              </a>
+          <p><b>*</b> Precio en sucursal</p>
+        </div>
+
+      </div>
+      <div class="col-md-7 order-md-1">
+        <div id="carouselShoes" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div *ngFor="let view of shoe.detail; let idx = index" class="{{idx == 0 ? 'carousel-item active' : 'carousel-item'}}">
+              <img class="d-block w-100" src="{{globals.bucket + shoe.album}}/{{view}}" alt="{{shoe.modelo}}">
             </div>
           </div>
-        <div class="col-md-12 order-md-3 text-center">
-            <h2 class="featurette-heading"><span class="text-muted">Guía de </span>tallas</h2>
-            <hr>
-            <table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
-            <h4>{{shoe.price | currency}} *</h4>
-            <p class="lead text-justify detail-description text-custom-desc">{{shoe.description}}</p>
+          <a class="carousel-control-prev" href="#carouselShoes" role="button" data-slide="prev">
+            <i class="fa fa-chevron-left fa-2x fa-dark" aria-hidden="true"></i>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselShoes" role="button" data-slide="next">
+            <i class="fa fa-chevron-right fa-2x fa-dark" aria-hidden="true"></i>
+            <span class="sr-only">Siguiente</span>
+          </a>
         </div>
+      </div>
+      <div class="col-md-6 order-md-3 text-center">
+        <h2 class="featurette-heading"><span class="text-muted">Guía de </span>tallas</h2>
+        <hr>
+        <table class="table table-sm table-hover">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Talla<br/>Dolancy</th>
+              <th scope="col">Largo en <br/>centímetros</th>
+              <th scope="col">US</th>
+              <th scope="col">EUR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let talla of shoe.properties.tallas">
+              <th scope="row">{{talla}}</th>
+              <td>{{talla}}</td>
+              <td>{{talla-18.5}}</td>
+              <td>{{+talla+13.5}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6 order-md-3">
+        <h2 class="featurette-heading text-center"><span class="text-muted"></span>Detalles</h2>
+        <hr>
+        <p class="mb-0"><b>Cuero de alta calidad</b></p>
+        <p class="lead text-custom-desc description-detail">Sólo utilizamos cuero de alta calidad lo que hace que nuestros zapatos sean duraderos y cómodos.</p>
+        <p class="mb-0"><b>Pintado a mano</b></p>
+        <p class="lead text-custom-desc description-detail">Nuestros zapatos están pintados y lustrados a mano. Nos da total liberdatd de hacer que cada par de
+          zapatos sea una pieza de arte única.</p>
+        <p class="mb-0"><b>Cortado a mano y puntado</b></p>
+        <p class="lead text-custom-desc description-detail">Todos nuestras molduras están cortadas a mano, esto lleva mucho más tiempo pero así podemos identificar y utilizar sólo las
+          mejores secciones de la piel.</p>
+        <p class="mb-0"><b>Forro Sueva</b></p>
+        <p class="lead text-custom-desc description-detail">Todos nuestros zapatos están forrados con suave piel de flor de cerdo, lo que significa una mayor
+          calidad acompañado de comodidad.</p>
+        <p class="mb-0"><b>Suela de cuero</b></p>
+        <p class="lead text-custom-desc description-detail">Las suelas de cuero son universalmente reconocias como el tipo de suela mas lujosa y premium.
+          Además la suela de cuero está adherida al zapato con una costura que le da mayor durabilidad y soporte a cada par de zapatos.</p>
+      </div>
+
     </div>
   </div>
 </div>
 <div class="container-fluid bg-light">
-    <div class="row px-2">
-        <div class="col-md-12">
-            <img class="card-img" src="{{shoe.album}}/horizontal.jpg" alt="Card image">
-        </div>
-        <div class="col-md-6">
-            <img class="card-img" src="{{shoe.album}}/cuadro1.jpg" alt="Card image">
-        </div>
-        <div class="col-md-6">
-            <img class="card-img" src="{{shoe.album}}/cuadro2.jpg" alt="Card image">
-        </div>
+  <div class="row px-2">
+    <div class="col-md-12">
+      <img class="card-img" src="{{globals.bucket + shoe.album}}/horizontal.jpg" alt="Card image">
     </div>
-    <div class="row text-center pt-4">
-        <div class="col-md-12">
-            <a href="https://www.instagram.com/dolancy/" class="display-5 text-custom-desc"><i class="fa fa-instagram" aria-hidden="true"></i> @dolancy</a>
-        </div>
+    <div class="col-md-6">
+      <img class="card-img" src="{{globals.bucket + shoe.album}}/cuadro1.jpg" alt="Card image">
     </div>
+    <div class="col-md-6">
+      <img class="card-img" src="{{globals.bucket + shoe.album}}/cuadro2.jpg" alt="Card image">
+    </div>
+  </div>
 </div>
 
 <div class="container-fluid bg-light">
-    <div class="row">
-        <div class="col-md-12 mb-1" style="min-height: 280px;">
-            <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/cdf8d7af984456509fec948748d1d2b2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;height:100%;border:0;overflow:hidden;"></iframe>      
-        </div>
+  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" style="background-image: url('/assets/images/portada.jpg')">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic">¿Quiénes somos?</h1>
+      <p class="lead my-3">Dolancy es una zapatería mexicana, familiar de artesanos que se ha dedicado a fabricar zapatos de la más alta calidad, siempre con un lema: <b class="text-light">#HechosConAmor</b>.</p>
+      <p class="lead mb-0"><a routerLink="/nosotros" class="text-white font-weight-bold">Leer más...</a></p>
     </div>
-</div>
-
-<div class="jumbotron jumbotron-fluid my-0 py-1 bg-dark text-light">
-  <div class="container">
-    <h1 class="display-4 text-custom-desc">#HechosConAmor</h1>
-    <p class="lead text-right">Todos necesitamos un nuevo estilo.</p>
+  </div>
+  <div class="row text-center pt-3">
+    <div class="col-md-12">
+      <h2><a href="https://www.instagram.com/dolancy/" class="badge badge-light text-custom-desc">
+        <i class="fa fa-instagram" aria-hidden="true"></i> @dolancy
+      </a></h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 d-block" style="min-height: 300px;">
+      <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+      <iframe src="https://cdn.lightwidget.com/widgets/cdf8d7af984456509fec948748d1d2b2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;height:100%;border:0;overflow:hidden;"></iframe>
+    </div>
   </div>
 </div>

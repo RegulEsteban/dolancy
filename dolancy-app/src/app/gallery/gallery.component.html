@@ -1,34 +1,91 @@
-<!--
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="{{bgGallery}}" alt="Cover">
-      <div class="carousel-caption d-none d-md-block">
-        <h1 class="jumbotron-heading">Album hola</h1>
-        <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+<nav class="navbar navbar-expand-lg bg-dark pt-5" style="z-index: auto"></nav>
+
+<div class="album bg-light">
+  <section class="jumbotron text-center" style="background-image: url('/assets/images/carousel1.jpg')">
+    <div class="container">
+      <h1 class="jumbotron-heading text-custom-desc">#HechosConAmor</h1>
+      <p class="lead text-muted text-custom-desc">Todos necesitamos un nuevo estilo</p>
+    </div>
+  </section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-2 pr-lg-0 pr-md-3 mb-3">
+        <p>Filtrar por:</p>
+        <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header py-0 px-0" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Color
+                </button>
+              </h2>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="custom-control custom-checkbox" *ngFor="let color of filtros.colores">
+                  <input type="checkbox" class="custom-control-input" id="{{color.id}}" [(ngModel)]="color.selected" (change)="color">
+                  <label class="custom-control-label" for="{{color.id}}">{{color.name}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header py-0 px-0" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                  Estilo
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="custom-control custom-checkbox" *ngFor="let estilo of filtros.estilos">
+                  <input type="checkbox" class="custom-control-input" id="{{estilo.id}}" [(ngModel)]="estilo.selected" (change)="estilo">
+                  <label class="custom-control-label" for="{{estilo.id}}">{{estilo.name}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header py-0 px-0" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                  Material
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <div class="custom-control custom-checkbox" *ngFor="let material of filtros.materiales">
+                  <input type="checkbox" class="custom-control-input" id="{{material.id}}" [(ngModel)]="material.selected" (change)="material">
+                  <label class="custom-control-label" for="{{material.id}}">{{material.name}}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-10 col-sm-12 px-0">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4 " *ngFor="let shoe of shoes | listFilter : filtros :checked()" [@fadeInOut] (mouseover)="shoe.src = shoe.album+'/'+shoe.detail[1]" (mouseout)="shoe.src = shoe.album+'/'+shoe.detail[0]">
+              <a routerLink="/producto/{{shoe.id}}" style="text-decoration: none">
+                <div class="card mb-4 box-shadow">
+                  <img class="card-img-top" [src]="globals.bucket + (shoe.src || shoe.album+'/'+shoe.detail[0])" alt="{{shoe.modelo}}">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <small class="text-muted">{{shoe.price | currency}} *</small>
+                      </div>
+                      <small class="text-muted">{{shoe.modelo}}</small>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
--->
-<div class="album py-4 bg-light">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4" *ngFor="let shoe of shoes">
-                <a routerLink="/producto/{{shoe.id}}">
-                    <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" data-src="{{shoe.album}}/1.jpg" alt="{{shoe.modelo}}">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <small class="text-muted">{{shoe.price | currency}} *</small>
-                                </div>
-                                <small class="text-muted">{{shoe.modelo}}</small>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
 </div>

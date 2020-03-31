@@ -1,6 +1,5 @@
-/*
-.carousel, .carousel-inner, .carousel-item{
-    max-height: 200px;
-}
-*/
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+  background-color: dimgrey;
+}

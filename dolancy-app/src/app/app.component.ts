@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Title }     from '@angular/platform-browser';
+import {Component} from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import {
   Router,
   Event as RouterEvent,
@@ -10,7 +10,6 @@ import {
 } from '@angular/router';
 import {
   trigger,
-  state,
   style,
   animate,
   transition,
@@ -27,47 +26,51 @@ import {
         query(':enter',
           style({
             position: 'fixed',
-            width:'100%',
+            width: '100%',
+            height: '100vh',
             transform: 'translateX(-100%)'
-          }),{optional:true}
+          }), {optional: true}
         ),
         query(':leave',
           animate('1000ms ease',
             style({
               position: 'fixed',
-              width:'100%',
+              width: '100%',
+              height: '100vh',
               transform: 'translateX(100%)'
             })
-          ),{optional:true}
+          ), {optional: true}
         ),
         query(':enter',
           animate('1000ms ease',
             style({
               opacity: 1,
+              width: '100%',
+              height: '100vh',
               transform: 'translateX(0%)'
             })
-          ),{optional:true}
+          ), {optional: true}
         ),
       ])
     ])
   ]
 })
 
-export class AppComponent{
-  title = 'app';
+export class AppComponent {
   logo: string;
   loading = true;
-  
-  constructor(private titleService: Title, private router: Router) { 
+  isMenuCollapsed = true;
+
+  constructor(private titleService: Title, private router: Router) {
     this.logo = '/assets/images/logo.png';
     this.titleService.setTitle('Dolancy Zapatería');
     this.loading = true;
-    
+
     router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event);
     });
   }
-  
+
   navigationInterceptor(event: RouterEvent): void {
     if (event instanceof NavigationStart) {
       this.loading = true;
@@ -83,8 +86,8 @@ export class AppComponent{
       this.loading = false;
     }
   }
-  
+
   getRouteAnimation(outlet) {
-    return outlet.activatedRouteData.animation
+    return outlet.activatedRouteData.animation;
   }
 }
