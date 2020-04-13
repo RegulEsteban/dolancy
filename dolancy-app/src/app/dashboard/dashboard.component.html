@@ -1,133 +1,140 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div class="bg-light">
+  <div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
     <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img class="first-slide" src="{{carousel1}}"  alt="First slide">
-            <div class="container">
-                <div class="carousel-caption-dashboard">
-                    <h1>Dolancy</h1>
-                    <p>Zapatería 100% mexicana</p>
-                </div>
-            </div>
+      <div class="carousel-item active" [ngStyle]="{'background-image': 'url('+carousel1+')'}">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 class="mb-3">Dolancy</h1>
+            <p>Zapatería 100% mexicana</p>
+            <p><a class="btn btn-lg btn-dark" href="https://tienda.dolancy.com/" role="button">Comprar <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></p>
+          </div>
         </div>
-        <div class="carousel-item">
-            <img class="second-slide" src="{{carousel2}}" alt="Second slide">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h2>Hechos con amor</h2>
-                    <p>Hacemos cada par de zapatos con mucha dedicación, buscando la mejor experiencia para nuestros clientes.</p>
-                    <p><a class="btn btn-lg btn-info" routerLink="/nosotros" role="button">¿Quiénes somos? <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></p>
-                </div>
-            </div>
+      </div>
+      <div class="carousel-item" [ngStyle]="{'background-image': 'url('+carousel2+')'}">
+        <div class="container">
+          <div class="carousel-caption">
+            <h2 class="text-light mb-3">Hechos con amor</h2>
+            <p class="text-light">Hacemos cada par de zapatos con mucha dedicación, buscando la mejor experiencia para nuestros clientes.</p>
+            <p><a class="btn btn-lg btn-light" routerLink="/nosotros" role="button">¿Quiénes somos? <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></p>
+          </div>
         </div>
-        <div class="carousel-item">
-            <img class="third-slide" src="{{carousel3}}" alt="Third slide">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h2>Elige tu estilo</h2>
-                    <p class="text-light">Busca el modelo que vaya más con tu personalidad.</p>
-                    <p><a class="btn btn-lg btn-info" routerLink="/galeria" role="button">Ver galería <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></p>
-                </div>
-            </div>
+      </div>
+      <div class="carousel-item" [ngStyle]="{'background-image': 'url('+carousel3+')'}">
+        <div class="container">
+          <div class="carousel-caption">
+            <h2 class="mb-3">Elige tu estilo</h2>
+            <p class="text-light">Busca el modelo que vaya más con tu personalidad.</p>
+            <p><a class="btn btn-lg btn-dark" href="https://tienda.dolancy.com/" role="button">Ver tienda <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></p>
+          </div>
         </div>
+      </div>
     </div>
     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-        <i class="fa fa-chevron-left fa-2x fa-dark" aria-hidden="true"></i>
-        <span class="sr-only">Anterior</span>
+      <i class="fa fa-chevron-left fa-2x fa-dark" aria-hidden="true"></i>
+      <span class="sr-only">Anterior</span>
     </a>
     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-        <i class="fa fa-chevron-right fa-2x fa-dark" aria-hidden="true"></i>
-        <span class="sr-only">Siguiente</span>
+      <i class="fa fa-chevron-right fa-2x fa-dark" aria-hidden="true"></i>
+      <span class="sr-only">Siguiente</span>
     </a>
-</div>
+  </div>
 
-<div class="container-fluid bg-light">
-    <div class="d-md-flex flex-md-equal w-100">
-        <div class="bg-dark text-center text-dark overflow-hidden">
-            <a routerLink="/producto/2" role="button">
-                <div class="card bg-dark text-dark">
-                    <img class="card-img" src="/assets/images/cuadro1.jpg" alt="Card image">
-                    <div class="card-img-overlay">
-                        <h2 class="display-5 text-custom-desc">Hechos a mano.</h2>
-                        <p class="lead text-custom-desc">097 Miel</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="bg-dark mr-md-3 text-center text-dark overflow-hidden">
-            <a routerLink="/producto/9" role="button">
-                <div class="card bg-dark text-dark">
-                    <img class="card-img" src="/assets/images/cuadro2.jpg" alt="Card image">
-                    <div class="card-img-overlay">
-                        <h2 class="display-5 text-custom-desc">Hechos para durar.</h2>
-                        <p class="lead text-custom-desc">221 Negro</p>
-                    </div>
-                </div>
-            </a>
-        </div>
+  <div class="container-fluid">
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="mr-md-3 text-center text-dark overflow-hidden">
+        <a href="https://tienda.dolancy.com/producto/097-miel" role="button">
+          <div class="card bg-dark text-dark">
+            <img class="card-img" src="/assets/images/cuadro1.jpg" alt="Card image">
+            <div class="card-img-overlay">
+              <h2 class="display-5 text-custom-desc">Hechos a mano</h2>
+              <!--<p class="text-custom-desc">097 Miel</p>-->
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="mr-md-3 text-center text-dark overflow-hidden">
+        <a href="https://tienda.dolancy.com/producto/221-negro" role="button">
+          <div class="card bg-dark text-dark">
+            <img class="card-img" src="/assets/images/cuadro2.jpg" alt="Card image">
+            <div class="card-img-overlay">
+              <h2 class="display-5 text-custom-desc">Hechos para durar</h2>
+              <!--<p class="text-custom-desc">221 Negro</p>-->
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
 
     <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-        <div class="bg-dark mr-md-3 text-center text-dark overflow-hidden">
-            <a routerLink="/producto/1" role="button">
-                <div class="card bg-dark text-dark">
-                    <img class="card-img" src="/assets/images/cuadro4.jpg" alt="Card image">
-                    <div class="card-img-overlay">
-                        <h2 class="display-5 text-custom-desc">Un clásico que no te puede faltar.</h2>
-                        <p class="lead text-custom-desc">040 Negro</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="bg-dark mr-md-3 text-center text-dark overflow-hidden">
-            <a routerLink="/producto/6" role="button">
-                <div class="card bg-dark text-dark">
-                    <img class="card-img" src="/assets/images/cuadro3.jpg" alt="Card image">
-                    <div class="card-img-overlay">
-                        <h2 class="display-5 text-custom-desc">Son ideales para momentos únicos.</h2>
-                        <p class="lead text-custom-desc">210 Miel</p>
-                    </div>
-                </div>
-            </a>
-        </div>
+      <div class="bg-dark mr-md-3 text-center text-dark overflow-hidden">
+        <a href="https://tienda.dolancy.com/producto/040-negro-natu" role="button">
+          <div class="card bg-dark text-dark">
+            <img class="card-img" src="/assets/images/cuadro4.jpg" alt="Card image">
+            <div class="card-img-overlay">
+              <h2 class="display-5 text-custom-desc">Un clásico que no te puede faltar</h2>
+              <!--<p class="text-custom-desc">040 Negro</p>-->
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="bg-dark mr-md-3 text-center text-dark overflow-hidden">
+        <a href="https://tienda.dolancy.com/producto/210-miel" role="button">
+          <div class="card bg-dark text-dark">
+            <img class="card-img" src="/assets/images/cuadro3.jpg" alt="Card image">
+            <div class="card-img-overlay">
+              <h2 class="display-5 text-custom-desc">Son ideales para momentos únicos</h2>
+              <!--<p class="text-custom-desc">210 Miel</p>-->
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
-
+  </div>
+  <div class="container-fluid bg-light">
     <div class="row text-center">
-      <div class="col-lg-4 mt-4">
-        <img src="/assets/images/iconos/piel.png" width="50" height="50" alt="piel">
-        <p>Alta calidad en materiales.</p>
-      </div>
-      <div class="col-lg-4 mt-4">
-        <img src="/assets/images/iconos/corte.png" width="50" height="50" alt="corte">
-        <p>Hecho por artesanos mexicanos.</p>
-      </div>
-      <div class="col-lg-4 mt-4">
-        <img src="/assets/images/iconos/suela.png" width="50" height="50" alt="suela">
-        <p>Estilo único. <br>Diseños clásicos.</p>
-      </div>
+      <div class="col"><hr></div>
     </div>
     <div class="row text-center">
-        <div class="col-md-12">
-            <a href="https://www.instagram.com/dolancy/" class="display-5 text-custom-desc"><i class="fa fa-instagram" aria-hidden="true"></i> @dolancy</a>
-        </div>
+      <div class="col-md-4 mt-4">
+        <img src="/assets/images/iconos/piel.png" width="60" height="60" alt="piel">
+        <p>Alta calidad en materiales</p>
+      </div>
+      <div class="col-md-4 mt-4">
+        <img src="/assets/images/iconos/corte.png" width="60" height="60" alt="corte">
+        <p>Hecho por artesanos mexicanos</p>
+      </div>
+      <div class="col-md-4 mt-4">
+        <img src="/assets/images/iconos/suela.png" width="60" height="60" alt="suela">
+        <p>Estilo único, <br>Diseños clásicos</p>
+      </div>
     </div>
-</div>
-
-<div class="container-fluid bg-light">
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark" style="background-image: url('/assets/images/portada.jpg')">
+      <div class="col-md-6 px-0">
+        <h1 class="display-4 font-italic">¿Quiénes somos?</h1>
+        <p class="lead my-3">Dolancy es una zapatería mexicana, familiar de artesanos que se ha dedicado a fabricar zapatos de la más alta calidad, siempre con un lema: <b class="text-light">#HechosConAmor</b>.</p>
+        <p class="lead mb-0"><a routerLink="/nosotros" class="text-white font-weight-bold">Leer más...</a></p>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-12 mt-5">
+        <h2>Síguenos en Instagram</h2>
+        <h2><a href="https://www.instagram.com/dolancy/" class="badge badge-light text-custom-desc">
+          <i class="fa fa-instagram" aria-hidden="true"></i> @dolancy
+        </a></h2>
+      </div>
+    </div>
     <div class="row">
-        <div class="col-md-12 mb-1" style="min-height: 280px;">
-            <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/cdf8d7af984456509fec948748d1d2b2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;height:100%;border:0;overflow:hidden;"></iframe>      
+      <div class="col-md-12">
+        <div class="embed-responsive embed-responsive-21by9">
+          <iframe class="embed-responsive-item" src="https://cdn.lightwidget.com/widgets/cdf8d7af984456509fec948748d1d2b2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="min-height: 100px "></iframe>
         </div>
+        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+      </div>
     </div>
-</div>
-
-<div class="jumbotron jumbotron-fluid my-0 py-1 bg-dark text-light">
-  <div class="container">
-    <h1 class="display-4 text-custom-desc">#HechosConAmor</h1>
-    <p class="lead text-right">Todos necesitamos un nuevo estilo.</p>
   </div>
 </div>

@@ -1,56 +1,44 @@
-.container {
-  max-width: 960px;
-}
-
 .card{
     border: none;
 }
 
-.carousel-caption-dashboard {
-  position: absolute;
-  right: 15%;
-  left: 15%;
-  z-index: 10;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center;
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.carousel-caption-dashboard h1{
-    font-size: 7em;
+.carousel-caption {
+  top: 30%;
+  bottom: auto;
+  color: #343A40;
+}
+
+.carousel-caption h1{
+    font-size: 10em;
     font-weight: bold;
-    text-shadow: 1px 1px 5px #e5e5e5;
+    letter-spacing: 10px;
 }
 
 .carousel-caption h2{
     font-size: 4em;
     font-weight: bold;
-    text-shadow: 1px 1px 5px #666;
+    letter-spacing: 5px;
+    font-style: italic;
 }
 
-.carousel-caption p,
-.carousel-caption-dashboard p{
+.carousel-caption p{
     font-size: 1.5em;
     text-shadow: 1px 1px 5px #666;
-}
-
-.card-title{
-    font-size: 2em;
-    font-weight: bold;
 }
 
 .card-img-overlay > .lead{
     text-shadow: 0px 0px 0px #666;
 }
-
-/*
- * Extra utilities
- */
-
-.border-top { border-top: 1px solid #e5e5e5; }
-.border-bottom { border-bottom: 1px solid #e5e5e5; }
-
-.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
 
 .flex-equal > * {
   -ms-flex: 1;
@@ -63,53 +51,6 @@
   }
 }
 
-.overflow-hidden { overflow: hidden; }
-
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
-/*
-body {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: #5a5a5a;
-}
-*/
-
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-/* Carousel base class */
-.carousel {
-/*  margin-bottom: 4rem;*/
-}
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel-item {
-  height: 32rem;
-  background-color: #777;
-}
-.carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 32rem;
-}
-
-.carousel-inner img {
-  margin: auto;
-}
-
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-/* Center align the text within the three columns below the carousel */
 .marketing .col-lg-4 {
   margin-bottom: 1.5rem;
   text-align: center;
@@ -122,46 +63,16 @@ body {
   margin-left: .75rem;
 }
 
-
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
-}
-
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -.05rem;
-}
-
-
-/* RESPONSIVE CSS
--------------------------------------------------- */
-
 @media (min-width: 40em) {
-  /* Bump up size of carousel content */
   .carousel-caption p {
     margin-bottom: 1.25rem;
     font-size: 1.25rem;
     line-height: 1.4;
   }
-
-  .featurette-heading {
-    font-size: 50px;
-  }
-}
-
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
 }
 
 @media (max-width: 576px) {
-    .carousel-caption-dashboard h1{
+    .carousel-caption h1{
         font-size: 5em;
     }
     .carousel-caption h2{

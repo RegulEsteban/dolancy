@@ -10,6 +10,9 @@ export class Shoes {
         piel: string;
         forro: string;
         suela: string;
-        tallas: string;
+        tallas: string[];
+        materiales: string[]
     };
+    online: string;
+    estilo: string[];
 }

@@ -1,25 +1,73 @@
 main{
-    min-height: 600px;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-image: url("/assets/images/Logo.svg");
-    background-size: 300px 190px;
+  min-height: 1000px;
+  background: url("/assets/images/Logo.svg") no-repeat fixed 50% 50%;
+  background-size: 300px 190px;
+}
+.navbar{
+  font-size: 1.1em;
 }
 
+.navbar-brand{
+  font-size: 1.35em;
+}
 .navbar-brand img{
     margin-right: 5px;
 }
 
 .paral-loader {
     min-height: 600px;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background: no-repeat fixed 50% 50%;
     border-radius: initial;
 }
 
 .loader-img{
     background-image: url("/assets/images/Logo.svg");
     background-size: 300px 180px;
+}
+
+.navbar-brand img{
+  filter: brightness(0.15);
+}
+.affix .navbar-brand img{
+  filter: brightness(1);
+}
+
+.affix-top {
+  background-color:transparent;
+  border-color:transparent;
+  -webkit-transition:all 0.5s ease;
+  -moz-transition:all 0.5s ease;
+  -o-transition:all 0.5s ease;
+  transition:all 0.5s ease;
+}
+
+.affix {
+  padding: 10px;
+  background-color: #343A40;
+  -webkit-transition:all 0.5s ease;
+  -moz-transition:all 0.5s ease;
+  -o-transition:all 0.5s ease;
+  transition:all 0.5s ease;
+}
+
+.navbar-toggler{
+  padding: .25rem .25rem;
+}
+
+@media (max-width: 576px) {
+    .affix{
+        padding: 5px;
+    }
+}
+
+.aviso{
+  text-align: center;
+  z-index: 10000000;
+}
+
+.navbar-text .aviso-text{
+  font-size: 0.8rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0px;
 }
