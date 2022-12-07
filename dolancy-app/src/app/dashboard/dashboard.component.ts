@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
     this.carousel2 = '/assets/images/carousel2-cp.jpg';
     this.carousel3 = '/assets/images/carousel3-cp.jpg';
     this.carousel4 = '/assets/images/Navidad-2019.jpg';
-    this.carousel5 = '/assets/images/Navidad-regalo-2019.jpg';
+    this.carousel5 = '/assets/images/navidad2022/portada-navidad01.jpg';
   }
 
   ngOnInit() {
